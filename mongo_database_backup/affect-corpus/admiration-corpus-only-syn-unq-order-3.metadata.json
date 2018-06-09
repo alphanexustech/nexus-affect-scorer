@@ -1,0 +1,1 @@
+{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "affect-corpus.admiration-corpus-only-syn-unq-order-3", "name" : "_id_" } ] }

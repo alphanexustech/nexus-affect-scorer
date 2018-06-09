@@ -1,0 +1,1 @@
+{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "affect-corpus.humbleness-corpus-only-syn-unq-order-2", "name" : "_id_" } ] }
