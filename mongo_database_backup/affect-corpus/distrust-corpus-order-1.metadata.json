@@ -1,1 +1,1 @@
-{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "affect-corpus.distrust-corpus-order-1", "name" : "_id_" } ] }
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"affect-corpus.distrust-corpus-order-1"}],"uuid":"2f9fb1e1b8a24cb6863ad3d5cc2dd666"}
