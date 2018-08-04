@@ -1,1 +1,1 @@
-{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "affect-corpus.outrage-corpus-only-syn-unq-order-2", "name" : "_id_" } ] }
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"affect-corpus.outrage-corpus-only-syn-unq-order-2"}],"uuid":"e5bae600d45946daa7a3ce6b8836dacb"}

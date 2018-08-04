@@ -1,1 +1,1 @@
-{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "affect-corpus.snoopiness-corpus-only-syn-unq-order-2", "name" : "_id_" } ] }
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"affect-corpus.snoopiness-corpus-only-syn-unq-order-2"}],"uuid":"23cbf19d904447a79fbbc89438474fc1"}

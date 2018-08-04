@@ -1,1 +1,1 @@
-{"options":{},"indexes":[{"v":1,"key":{"_id":1},"name":"_id_","ns":"affect-corpus.hotness-corpus-only-syn-unq-order-2"}]}
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"affect-corpus.hotness-corpus-only-syn-unq-order-2"}],"uuid":"4f59276cdb4b4c6c911345090db05b53"}

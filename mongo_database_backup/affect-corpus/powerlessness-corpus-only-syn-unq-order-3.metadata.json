@@ -1,1 +1,1 @@
-{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "affect-corpus.powerlessness-corpus-only-syn-unq-order-3", "name" : "_id_" } ] }
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"affect-corpus.powerlessness-corpus-only-syn-unq-order-3"}],"uuid":"193d83abc7354430abf1969d28fcb964"}

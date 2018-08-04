@@ -1,1 +1,1 @@
-{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "affect-corpus.remorse-corpus-only-syn-unq-order-2", "name" : "_id_" } ] }
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"affect-corpus.remorse-corpus-only-syn-unq-order-2"}],"uuid":"aa402b60aff341888038d34c9393741e"}

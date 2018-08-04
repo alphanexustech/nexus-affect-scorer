@@ -1,1 +1,1 @@
-{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "affect-corpus.wonder-corpus-only-syn-unq-order-1", "name" : "_id_" } ] }
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"affect-corpus.wonder-corpus-only-syn-unq-order-1"}],"uuid":"5acaa9d9f20f4b0e98108f3574d0f862"}

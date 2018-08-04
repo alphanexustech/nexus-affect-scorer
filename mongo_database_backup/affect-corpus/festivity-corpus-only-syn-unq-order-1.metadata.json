@@ -1,1 +1,1 @@
-{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "affect-corpus.festivity-corpus-only-syn-unq-order-1", "name" : "_id_" } ] }
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"affect-corpus.festivity-corpus-only-syn-unq-order-1"}],"uuid":"eb4a9c1333c04a1caeada77c2f07abf0"}

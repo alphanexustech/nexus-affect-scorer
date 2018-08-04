@@ -44,19 +44,14 @@ get_bucketed_frequency_distribution()
 get_affect_stop_words()
 get_member_distribution()
 get_bucketed_member_distribution()
-common_set_affects()
 '''
 def get_frequency_distribution():
     rcd_cursor = affect_corpus.db[configurations.freq_dist_collection].find({});
     frequency_distribution = {}
     for i in rcd_cursor:
         affects = list(set(i['affects']))
-        common_affects = []
-        for r in affects:
-            if r in app.common_set_affects:
-                common_affects.append(app.common_set_affects[r])
-        if len(common_affects) > 0:
-            frequency_distribution[i['word']] = common_affects
+        if len(affects) > 0:
+            frequency_distribution[i['word']] = affects
     return {
         "status": "OK",
         "frequency_distribution": frequency_distribution
@@ -67,15 +62,11 @@ def get_bucketed_frequency_distribution():
     frequency_distribution = {}
     for i in rcd_cursor:
         affects = list(set(i['affects']))
-        common_affects = []
-        for r in affects:
-            if r in app.common_set_affects:
-                common_affects.append(app.common_set_affects[r])
-        if len(common_affects) > 0:
-            if len(common_affects) not in frequency_distribution:
-                frequency_distribution[len(common_affects)] = [i['word']]
+        if len(affects) > 0:
+            if len(affects) not in frequency_distribution:
+                frequency_distribution[len(affects)] = [i['word']]
             else:
-                frequency_distribution[len(common_affects)].append(i['word'])
+                frequency_distribution[len(affects)].append(i['word'])
     return {
         "status": "OK",
         "frequency_distribution": frequency_distribution
@@ -101,8 +92,7 @@ def get_member_distribution():
     rcd_cursor = affect_corpus.db[configurations.membership_collection].find({});
     member_distribution = {}
     for i in rcd_cursor:
-        if i['affect'] in app.common_set_affects:
-            member_distribution[app.common_set_affects[i['affect']]] = i['data']
+        member_distribution[i['affect']] = i['data']
     return {
         "status": "OK",
         "member_distribution": member_distribution
@@ -112,52 +102,13 @@ def get_bucketed_member_distribution():
     rcd_cursor = affect_corpus.db[configurations.membership_collection].find({});
     member_distribution = {}
     for i in rcd_cursor:
-        if i['affect'] in app.common_set_affects:
-            if len(i['data']) not in member_distribution:
-                member_distribution[len(i['data'])] = [app.common_set_affects[i['affect']]]
-            else:
-                member_distribution[len(i['data'])].append(app.common_set_affects[i['affect']])
+        if len(i['data']) not in member_distribution:
+            member_distribution[len(i['data'])] = [i['affect']]
+        else:
+            member_distribution[len(i['data'])].append(i['affect'])
     return {
         "status": "OK",
         "member_distribution": member_distribution
-    }
-
-def common_set_affects(flaskResponse=None):
-
-    #
-    # Manually pruned data from CSV
-    #
-
-    if sys.version_info[0] == 2:  # Not named on 2.6
-        kwargs = {}
-    else:
-        kwargs ={
-            'encoding': 'utf8',
-            'newline': ''
-            }
-
-    script_dir = os.path.dirname(__file__) #<-- absolute dir the script is in
-    rel_path = "..\\..\\data\\meta_alternative_name_list.csv"
-    if os.name == 'posix': # If on linux system
-        rel_path = "../../data/meta_alternative_name_list.csv"
-    abs_file_path = os.path.join(script_dir, rel_path)
-    affects = {};
-
-    with open(abs_file_path, **kwargs) as csvfile:
-        data = csv.reader(csvfile, delimiter=',', quotechar='"')
-        for row in data:
-            if row[2] == '1':
-                if row[1] != '':
-                    affects[row[0]] = row[1]
-                else:
-                    affects[row[0]] = row[0]
-
-    csvfile.close();
-
-    return {
-        "status": "OK",
-        "affects": affects,
-        "len_affects": len(affects)
     }
 
 '''
@@ -308,7 +259,7 @@ def process_text(doc=None):
     return sorted_final_result
 
 def analyze_text(affect_set=None, doc=None):
-    if affect_set == 'all_affects': # Get the common_set
+    if affect_set == 'all_affects': # Get the main set
         if doc:
             result = process_text(doc)
             return {

@@ -1,1 +1,1 @@
-{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "affect-corpus.courageousness-corpus-only-syn-unq-order-1", "name" : "_id_" } ] }
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"affect-corpus.courageousness-corpus-only-syn-unq-order-1"}],"uuid":"97d57a1e30a94036b44c571c98f999d5"}

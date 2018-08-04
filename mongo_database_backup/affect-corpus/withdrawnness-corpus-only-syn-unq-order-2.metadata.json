@@ -1,1 +1,1 @@
-{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "affect-corpus.withdrawnness-corpus-only-syn-unq-order-2", "name" : "_id_" } ] }
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"affect-corpus.withdrawnness-corpus-only-syn-unq-order-2"}],"uuid":"ea236a3b17ff40cbb4a0a3ae0cf0e2db"}
