@@ -10,3 +10,4 @@ With `pipenv` dependencies are installed in a virtualized way:
 Alternatively, install dependencies to the system: `pipenv install --system`
 
 # License
+MIT
